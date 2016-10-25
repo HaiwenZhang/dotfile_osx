@@ -73,7 +73,7 @@ plugins=(git autojump zsh-syntax-highlighting colored-man colorize github python
 
 # User configuration
 
-export PATH=$HOME/bin:/usr/local/bin:$PATH
+export PATH=$HOME/bin:/usr/local/bin:/usr/local/sbin:$PATH:/opt/local/bin
 # export MANPATH="/usr/local/man:$MANPATH"
 # export PATH=/sr/local/opt/coretils/liexec/nbin:$PATH
 source $ZSH/oh-my-zsh.sh
@@ -107,18 +107,32 @@ source $ZSH/oh-my-zsh.sh
  alias vimconfig="vim ~/.vimrc"
  alias pc=proxychains4
  alias mongod="mongod -config /usr/local/etc/mongod.conf"
+# alias browser="browser-sync start --server --directory --files"
+ alias browser="browser-sync start --server --directory --files '**/*'"
+ alias apiprint="aglio -s -i"
+ alias auroraapi="aglio -i AuroraServer.md -o AuroraServer.html"
+ alias redis-server="redis-server /usr/local/etc/redis.conf"
+ alias pg="postgres -D /usr/local/var/postgres"
+ alias s="rails s"
+ alias pc="proxychains4"
+# alias python=python3
+# alias ipython=ipython3
+# alias pip=pip3
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 #
+#EDITOR
+EDITOR=/usr/local/bin/vim
+#
 #Pyrhon setting
-export PYENV_ROOT=/usr/local/var/pyenv
-if which pyenv > /dev/null; then
-    eval "$(pyenv init -)"; fi
+#export PYENV_ROOT=/usr/local/var/pyenv
+#if which pyenv > /dev/null; then
+#    eval "$(pyenv init -)"; fi
 
 #Ruby Setting
-export RBENV_ROOT=/usr/local/var/rbenv
-if which rbenv > /dev/null; then
-    eval "$(rbenv init -)";
-fi
+#export RBENV_ROOT=/usr/local/var/rbenv
+#if which rbenv > /dev/null; then
+    #eval "$(rbenv init -)";
+#fi
 
 PATH="/usr/local/opt/gnu-sed/libexec/gnubin:$PATH"
 #Java Setting
@@ -142,4 +156,6 @@ if [ -d "$GHC_DOT_APP" ]; then
 fi
 
 # Home Brew Setting
-export HOMEBREW_BOTTLE_DOMAIN=http://7xkcej.dl1.z0.glb.clouddn.com
+export HOMEBREW_BOTTLE_DOMAIN=https://mirrors.ustc.edu.cn/homebrew-bottles
+# export HOMEBREW_BOTTLE_DOMAIN=http://7xkcej.dl1.z0.glb.clouddn.com
+export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting

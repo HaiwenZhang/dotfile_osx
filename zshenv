@@ -4,11 +4,11 @@ if which pyenv > /dev/null; then
     eval "$(pyenv init -)"; fi
 
 
-#Ruby Setting
-export RBENV_ROOT=/usr/local/var/rbenv
-if which rbenv > /dev/null; then
-    eval "$(rbenv init -)";
-fi
+##Ruby Setting
+#export RBENV_ROOT=/usr/local/var/rbenv
+#if which rbenv > /dev/null; then
+    #eval "$(rbenv init -)";
+#fi
 
 PATH="/usr/local/opt/gnu-sed/libexec/gnubin:$PATH"
 #Java Setting
@@ -22,4 +22,6 @@ export CLASSPATH
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 
+#PostgreSQL Setting
+export PATH=$PATH:/Applications/Postgres.app/Contents/Versions/latest/bin
 
