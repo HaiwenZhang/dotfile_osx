@@ -1,20 +1,6 @@
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
 
-#export DEFAULT_USER = "haiwen@Haiwens-MacBook-Pro"
-# Set name of the theme to load.
-# Look in ~/.oh-my-zsh/themes/
-# Optionally, if you set this to "random", it'll load a random theme each
-# time that oh-my-zsh is loaded.
-# ZSH_THEME="robbyrussell"
-# ZSH_THEME="juanghurtado"
-# ZSH_THEME="pygmalion"
-# {
-#   ZSH_THEME="agnoster"
-#   DEFAULT_USER="haiwen"
-# }
-#
-# {
 ZSH_THEME="powerline"
 POWERLINE_DATE_FORMAT="%D{%d-%m}"
 POWERLINE_HIDE_HOST_NAME="true"
@@ -106,7 +92,7 @@ source $ZSH/oh-my-zsh.sh
  alias zshconfig="vim ~/.zshrc"
  alias vimconfig="vim ~/.vimrc"
  alias pc=proxychains4
- alias mongod="mongod -config /usr/local/etc/mongod.conf"
+# alias mongod="mongod -config /usr/local/etc/mongod.conf"
 # alias browser="browser-sync start --server --directory --files"
  alias browser="browser-sync start --server --directory --files '**/*'"
  alias apiprint="aglio -s -i"
@@ -136,9 +122,9 @@ EDITOR=/usr/local/bin/vim
 
 PATH="/usr/local/opt/gnu-sed/libexec/gnubin:$PATH"
 #Java Setting
-JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_66.jdk/Contents/Home
+JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_112.jdk/Contents/Home
 PATH=$JAVA_HOME/bin:$PATH:.
-CLASSPATH=$JAVA_HOME/lib/tools.jar:$JAVA_HOME/lib/dt.jar:.
+CLASSPATH=$JAVA_HOME/lib/tools.jar:$JAVA_HOME/lib/dt.jar:/usr/local/share/java/zmq.jar.
 export JAVA_HOME
 export PATH
 export CLASSPATH
@@ -157,5 +143,29 @@ fi
 
 # Home Brew Setting
 export HOMEBREW_BOTTLE_DOMAIN=https://mirrors.ustc.edu.cn/homebrew-bottles
+#export HOMEBREW_BOTTLE_DOMAIN=https://mirrors.tuna.tsinghua.edu.cn/homebrew-bottles
 # export HOMEBREW_BOTTLE_DOMAIN=http://7xkcej.dl1.z0.glb.clouddn.com
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+
+
+export PATH="/usr/local/opt/python/libexec/bin:$PATH"
+
+# where proxy 9090
+proxy () {
+  export http_proxy="http://127.0.0.1:9090" # http代理地址
+  export https_proxy="http://127.0.0.1:9090" # https代理地址
+  echo "HTTP Proxy on"
+}
+
+# where noproxy
+noproxy () {
+  unset http_proxy
+  unset https_proxy
+  echo "HTTP Proxy off"
+}
+
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
